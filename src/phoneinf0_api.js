@@ -1,9 +1,13 @@
 function Run() {
-  console.log(document.getElementById("id_pn").value)
-  $.post("https://phoneinf0.herokuapp.com/api/", {
-      'pn':document.getElementById("id_pn").value,
-  },
-  function(data,status){
-    alert(JSON.stringify(data))
-})
+
+  let data = {pn:document.getElementById("id_pn").value};
+
+  fetch("https://phoneinf0.herokuapp.com/api/", {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'}, 
+    body: JSON.stringify(data),
+    
+  }).then(res => {
+    alert(res)
+  });
 }
