@@ -1,6 +1,5 @@
 # http://phoneinf0.herokuapp.com/
 
 # Phoneinf0_desktop_app
-
-npm install
+# Run
 npm start
