@@ -1,4 +1,4 @@
 # Run
 
-npm install /n
+npm install \n
 npm start
