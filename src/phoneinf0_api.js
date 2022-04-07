@@ -1,15 +1,13 @@
 function Run() {
-  async function postData(url, data = {}) {
+  async function postData(url, data) {
     const response = await fetch(url, {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
-      body: data
-      
+      body: JSON.stringify(data)
     });
     return response.json();
   }
-  postData('https://phoneinf0.herokuapp.com/api/', 
-  "{ 'pn': '+962778910319' }")
+  postData('https://phoneinf0.herokuapp.com/api/',{pn:document.getElementById('id_pn').value})
     .then(data => {
       alert(data);
     });
